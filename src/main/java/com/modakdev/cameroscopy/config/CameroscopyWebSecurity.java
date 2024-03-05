@@ -15,7 +15,7 @@ public class CameroscopyWebSecurity {
                 .authorizeHttpRequests(authorize -> authorize
                         .anyRequest().permitAll() // Adjust request authorization as needed
                 )
-                .csrf(AbstractHttpConfigurer::disable);
+                .csrf(AbstractHttpConfigurer::disable);  // not a good approach
 
         return http.build();
     }

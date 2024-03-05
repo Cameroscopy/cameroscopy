@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 public class CameroscopyServiceImpl implements CameroscopyService{
 
     @Autowired
-    public CameroscopyRepository repo;
+    public CameroscopyRepository repo; // autowire the repo
     @Override
     public CameroscopyUser addUser(CameroscopyUser user) {
         repo.save(user);

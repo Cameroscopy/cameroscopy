@@ -2,7 +2,6 @@ package com.modakdev.cameroscopy.api;
 
 
 import com.modakdev.cameroscopy.model.client.CameroscopyUser;
-import com.modakdev.cameroscopy.repo.CameroscopyRepository;
 import com.modakdev.cameroscopy.service.CameroscopyServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -12,7 +11,7 @@ public class CameroscopyController {
 
 
     @Autowired
-    CameroscopyServiceImpl service;
+    CameroscopyServiceImpl service; //Autowire the service
 
     @GetMapping("/healthcheck")
     public String healthCheck()
