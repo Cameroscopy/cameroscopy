@@ -10,14 +10,14 @@ public class CameroscopyUser {
 
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
-    private Long ID;
+    private Long id;
     private String firstName, lastName, username, password, role;
 
     public CameroscopyUser() {
     }
 
     public CameroscopyUser(Long ID, String firstName, String lastName, String username, String password, String role) {
-        this.ID = ID;
+        this.id = ID;
         this.firstName = firstName;
         this.lastName = lastName;
         this.username = username;
@@ -25,12 +25,12 @@ public class CameroscopyUser {
         this.role = role;
     }
 
-    public Long getID() {
-        return ID;
+    public Long getId() {
+        return id;
     }
 
-    public void setID(Long ID) {
-        this.ID = ID;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getFirstName() {
@@ -76,7 +76,7 @@ public class CameroscopyUser {
     @Override
     public String toString() {
         return "CameroscopyUser{" +
-                "ID=" + ID +
+                "ID=" + id +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", username='" + username + '\'' +

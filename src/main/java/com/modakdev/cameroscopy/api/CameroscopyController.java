@@ -1,39 +1,23 @@
 package com.modakdev.cameroscopy.api;
 
-
 import com.modakdev.cameroscopy.model.client.CameroscopyUser;
-import com.modakdev.cameroscopy.service.CameroscopyServiceImpl;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
+import com.modakdev.cameroscopy.model.server.CameroscopyResponse;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 
-@RestController
-public class CameroscopyController {
+public interface CameroscopyController {
 
+    public String healthCheck();
 
-    @Autowired
-    CameroscopyServiceImpl service; //Autowire the service
+    public CameroscopyUser addUser(@RequestBody CameroscopyUser user);
 
-    @GetMapping("/healthcheck")
-    public String healthCheck()
-    {
-        return "ok";
+    public CameroscopyUser deleteUser(@RequestBody CameroscopyUser user);
+
+    public CameroscopyUser deleteUserById(@RequestParam Long id);
+
+    public CameroscopyResponse signUp(@RequestBody CameroscopyUser user);
+
+    public CameroscopyResponse login(@RequestBody CameroscopyUser user);
+
     }
-
-    @PostMapping("/adduser")
-    public CameroscopyUser addUser(@RequestBody CameroscopyUser user)
-    {
-        return service.addUser(user);
-    }
-
-    @DeleteMapping("/deleteuser")
-    public CameroscopyUser deleteUser(@RequestBody CameroscopyUser user)
-    {
-        return service.deleteUser(user);
-    }
-
-    @DeleteMapping("/deleteuser/{id}")
-    public CameroscopyUser deleteUserById(@RequestParam Long id)
-    {
-        return service.deleteUserById(id);
-    }
-}

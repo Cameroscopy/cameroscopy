@@ -5,5 +5,8 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface CameroscopyRepository extends JpaRepository<CameroscopyUser, Long> {
 
-    public CameroscopyUser deleteUserByID(Long id);
+    public CameroscopyUser deleteUserById(Long id);
+
+    CameroscopyUser findByUsername(String username);
+
 }

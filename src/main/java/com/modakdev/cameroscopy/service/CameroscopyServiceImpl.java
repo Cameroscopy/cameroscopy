@@ -11,6 +11,7 @@ public class CameroscopyServiceImpl implements CameroscopyService{
 
     @Autowired
     public CameroscopyRepository repo; // autowire the repo
+
     @Override
     public CameroscopyUser addUser(CameroscopyUser user) {
         repo.save(user);
@@ -25,7 +26,7 @@ public class CameroscopyServiceImpl implements CameroscopyService{
 
     @Override
     public CameroscopyUser deleteUserById(Long id) {
-        CameroscopyUser user = repo.deleteUserByID(id);
+        CameroscopyUser user = repo.deleteUserById(id);
         return user;
     }
 }

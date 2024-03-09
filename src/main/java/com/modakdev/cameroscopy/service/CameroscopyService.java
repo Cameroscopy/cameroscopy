@@ -6,5 +6,5 @@ public interface CameroscopyService {
     public CameroscopyUser addUser(CameroscopyUser user);
     public CameroscopyUser deleteUser(CameroscopyUser user);
 
-    CameroscopyUser deleteUserById(Long id);
+    public CameroscopyUser deleteUserById(Long id);
 }
