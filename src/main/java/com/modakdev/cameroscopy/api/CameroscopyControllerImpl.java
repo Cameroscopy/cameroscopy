@@ -12,6 +12,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Map;
+
 @RestController
 public class CameroscopyControllerImpl implements CameroscopyController{
 
@@ -48,7 +50,8 @@ public class CameroscopyControllerImpl implements CameroscopyController{
 
 
     @PostMapping("/signup")
-    public CameroscopyResponse signUp(@RequestBody CameroscopyUser user) {
+    public CameroscopyResponse signUp(@RequestHeader Map<String, String> headers, @RequestBody CameroscopyUser user) {
+        System.out.println(headers.toString());
         boolean result = authService.signUp(user);
         CameroscopySignupResponse response = new CameroscopySignupResponse();
         if(result) {
