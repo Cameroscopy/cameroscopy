@@ -73,7 +73,7 @@ public class CameroscopyControllerImpl implements CameroscopyController{
         CameroscopyLoginResponse response = new CameroscopyLoginResponse();
         if(token != null) {
             {
-                response.setMessage("Login successful");
+                response.setMessage("Login successfull");
                 response.setStatus(HttpStatus.OK);
                 response.setToken(token);
                 return response;
